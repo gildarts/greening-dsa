@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+  <display-name>Application Server</display-name>
+  <description>Application Server</description>
+
+    <!--servlet>
+        <servlet-name>WSServlet</servlet-name>        
+        <servlet-class>AuthServlet</servlet-class>
+		<async-supported>false</async-supported>
+    </servlet-->
+	
+    <servlet>
+        <servlet-name>DSAServlet</servlet-name>        
+        <servlet-class>ischool.dsa.DSAServlet</servlet-class>
+		<async-supported>true</async-supported>
+    </servlet>
+	
+	<servlet>
+        <servlet-name>DMAServlet</servlet-name>        
+        <servlet-class>ischool.dma.DMAServlet</servlet-class>
+		<async-supported>true</async-supported>
+    </servlet>
+	
+    <servlet>
+        <servlet-name>FormRedirectServlet</servlet-name>      
+        <servlet-class>ischool.dsa.FormRedirectServlet</servlet-class>
+    </servlet>
+	
+	<!--servlet-mapping>
+        <servlet-name>WSServlet</servlet-name>
+        <url-pattern>/ws</url-pattern>
+    </servlet-mapping-->
+    
+    <servlet-mapping>
+        <servlet-name>FormRedirectServlet</servlet-name>
+        <url-pattern>/formredirect</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>DSAServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>DMAServlet</servlet-name>
+        <url-pattern>/dma</url-pattern>
+    </servlet-mapping>
+	
+
+</web-app>
